@@ -87,11 +87,12 @@ function Home() {
            {
             data.map((blog)=>(
                 <GridItem key={blog._id}  >
-                <Card >
+                <Card>
                     <CardBody>
                        <Image src={`https://mern-backend-api-6y85.onrender.com/public${blog.imagePath}`}/>
                         <Heading>{blog.title}</Heading>
                         <Text>{blog.desc}</Text>
+                        <Text mt={4}> Created By: {new Date(blog.date).toLocaleDateString()}</Text>
                     </CardBody>
                     <Divider/>
                     <CardFooter>
