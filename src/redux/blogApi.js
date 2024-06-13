@@ -9,6 +9,9 @@ export const blogApi = createApi({
   endpoints: (builder) => ({
     getBlogs: builder.query({
       query: () => `allblog`,
+      transformResponse: (response) => {
+        return response.reverse();
+   },
       providesTags: ['Blog'],
     }),
     Blog: builder.query({
